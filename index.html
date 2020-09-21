@@ -27,9 +27,10 @@
     <div class="wrapper">
 
       <header>
+
+        <div class="back">Back</div>
         <h1> </h1>
-        <div class="prev">Precedente</div>
-        <div class="next">Successivo</div>
+        <div class="next">Next</div>
       </header>
 
       <ul id="days">
@@ -42,7 +43,7 @@
 
     <!-- TEMPLATE HANDLEBARS -->
     <script id="day-template" type="text/x-handlebars-template">
-      <li class="day" data-date="{{dateComplete}}">{{day}} {{month}} <span class="redHoliday"></span> </li>
+      <li class="day" data-date="{{dateComplete}}">{{day}}<br><span class="redHoliday"></span> </li>
     </script>
     <!--// TEMPLATE HANDLEBARS -->
 

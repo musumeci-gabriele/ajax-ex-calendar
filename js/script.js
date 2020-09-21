@@ -14,7 +14,7 @@ function printCalendar(date){
   var template = Handlebars.compile(source);
 
   // STAMPA GIORNI DEL CALENDARIO
-  for (var i = 0; i <= dayInMonth; i++) {
+  for (var i = 1; i <= dayInMonth; i++) {
     var context = {
       "day": i,
       "month": dateCalendar.format("MMMM"),
@@ -47,7 +47,7 @@ function printHolidays(date){
           var holidaysName = holidays[i].name;
 
           $(".day[data-date = '"+ holidaysDate +"']").addClass("redHoliday");
-          $(".day[data-date = '"+ holidaysDate +"'] span").text("- "+ holidaysName);
+          $(".day[data-date = '"+ holidaysDate +"'] span").text(holidaysName);
           }
       },
       "error": function(){
@@ -64,24 +64,26 @@ $(document).ready(function(){
   printCalendar(date);
   printHolidays(date);
 
-});
+  // FUNZIONE CLICK TASTO PRECEDENTE
+  $(".back").click(function(){
+    if(date.format("M") == 1){
+      alert("non puoi andare indietro");
+    }else{
+      date.subtract(1, "months");
+      printCalendar(date);
+      printHolidays(date);
+    }
+  });
 
-$(".prev").click(function(){
-  if(date.format("M") == 1){
-    alert("non puoi andare indietro");
-  }else{
-    date.subtract(1, "months");
-    printCalendar(date);
-    printHolidays(date);
-  }
-});
+  // FUNZIONE CLICK TASTO SUCCESSIVO
+  $(".next").click(function(){
+    if(date.format("M") == 11){
+      alert("non puoi andare avanti");
+    }else{
+      date.add(1, "months");
+      printCalendar(date);
+      printHolidays(date);
+    }
+  });
 
-$(".next").click(function(){
-  if(date.format("M") == 11){
-    alert("non puoi andare avanti");
-  }else{
-    date.add(1, "months");
-    printCalendar(date);
-    printHolidays(date);
-  }
 });

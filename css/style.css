@@ -3,11 +3,54 @@
   padding: 0;
   margin: 0;
 }
-.wrapper{
-  width: 500px;
-  margin: auto;
+
+body{
+  background-color: lightblue;
+  color: inherit;
+  font-weight: bold;
 }
+.wrapper{
+  width: 80vw;
+  height: 92vh;
+  margin: 20px auto;
+  background-color: rgb(255, 229, 160);
+  color:inherit;
+  border: 1px solid black;
+  box-shadow: 10px 10px 12px grey;
+}
+
 .redHoliday{
   color: red;
   background-color: inherit;
+}
+header{
+  display: flex;
+  justify-content: space-between;
+  margin: 20px;
+  align-items: center;
+}
+header div{
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 6px 40px;
+  box-shadow: 10px 10px 12px grey;
+  background-color: white;
+  color: inherit;
+}
+#days{
+  margin: 10px 3px;
+}
+.day{
+  list-style: none;
+  display: inline-block;
+  border: 1px solid black;
+  padding: 10px;
+  margin: 11px;
+  height: 12vh;
+  width: 10vw;
+  text-align: center;
+  box-shadow: 10px 10px 12px grey;
+  vertical-align: bottom;
+  background-color: white;
+  color: inherit;
 }
