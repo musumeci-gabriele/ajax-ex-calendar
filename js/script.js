@@ -9,7 +9,7 @@ function printCalendar(date){
 
   var dayInMonth = dateCalendar.daysInMonth();
 
-  // TEMPLATE DEL CALENDARIO dei giorni
+  // TEMPLATE DEL CALENDARIO DEI GIORNI
   var source = $("#day-template").html();
   var template = Handlebars.compile(source);
 
@@ -71,6 +71,16 @@ $(".prev").click(function(){
     alert("non puoi andare indietro");
   }else{
     date.subtract(1, "months");
+    printCalendar(date);
+    printHolidays(date);
+  }
+});
+
+$(".next").click(function(){
+  if(date.format("M") == 11){
+    alert("non puoi andare avanti");
+  }else{
+    date.add(1, "months");
     printCalendar(date);
     printHolidays(date);
   }
