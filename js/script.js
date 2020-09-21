@@ -1,5 +1,5 @@
 $(document).ready(function(){
- // data inizio calendario
+ // DATA INIZIO CALENDARIO
   var date = moment("2018-01-01");
 
   printCalendar(date);
@@ -7,17 +7,20 @@ $(document).ready(function(){
 
 });
 
+// FUNZIONE STAMPA CALENDARIO
 function printCalendar(date){
     var momentDate = moment(date);
 
-    $("h1").text(momentDate.format("MMMM YYYYY"));
+    $("h1").text(momentDate.format("MMMM YYYY"));
     // TEMPLATE DEL CALENDARIO dei giorni
     var source = $("#day-template").html();
     var template = Handlebars.compile(source);
 
-        // STAMPO GIORNI del calendario
+    // STAMPA GIORNI DEL CALENDARIO
     for (var i = 0; i <= momentDate.daysInMoment(); i++) {
+
       var dateComplate = momentDate.format("YYYY")+"-"+ momentDate.format("MM")+"-"+addZero(i);
+
       var context = {
         "day": i,
         "month": momentDate.format("MMMM"),
@@ -31,10 +34,11 @@ function printCalendar(date){
     }
 }
 
-
+// FUNZIONE STAMPA FESTIVITA'
 function printHolidays(holidays){
-  var month = momentDate.format("M")-1;
-
+  // var mese
+  var month = date.format("M")-1;
+  // chiamata al server del calendario 2018
   $.ajax(
     {
       "url": "https://flynn.boolean.careers/exercises/api/holidays",
@@ -52,12 +56,12 @@ function printHolidays(holidays){
             var holidaysDate = holidays[i].date;
             var holidaysName = holidays[i].name;
 
-            $(".day[data-date = '"+holidayDate+"']").addClass("holiday");
-            $(".day[data-date = '"+holidayDate+"'].holidayType").text("- "+ holidayName);
+            $(".day[data-date = '"+ holidaysDate +"']").addClass("RedHoliday");
+            $(".day[data-date = '"+ holidaysName +"'].holiday").text("- "+ holidaysName);
           }
         }
       },
-      "error": function(prova){
+      "error": function(){
         alert("Errore!");
       }
     }

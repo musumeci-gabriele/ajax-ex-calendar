@@ -2,30 +2,50 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Calendario</title>
-    <script src="https://momentjs.com/download/moment.js" charset="utf-8"></script>
+    <title>Calendario js</title>
+    <script src="https://momentjs.com/downloads/moment.js" charset="utf-8"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.6/handlebars.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="css/style.css">
   </head>
+
   <body>
+    <!-- Creiamo un calendario dinamico con le festività.
+    Il calendario partirà da gennaio 2018 e si concluderà a dicembre 2018 (unici dati disponibili sull’API).
+    Milestone 1
+    Creiamo il mese di Gennaio, e con la chiamata all'API inseriamo le festività. -->
+    <!-- Milestone 2
+    Diamo la possibilità di cambiare mese, gestendo il caso in cui l’API non possa ritornare festività.
+    Attenzione!
+    Ogni volta che cambio mese dovrò:
+    Controllare se il mese è valido (per ovviare al problema che l’API non carichi holiday non del 2018)
+    Controllare quanti giorni ha il mese scelto formando così una lista
+    Chiedere all’api quali sono le festività per il mese scelto
+    Evidenziare le festività nella lista -->
+
+    <!-- CALENDARIO -->
     <div class="wrapper">
+
       <header>
-        <h1>Gennaio</h1>
+        <h1> </h1>
         <div class="prev">Precedente</div>
-          <div class="next">Successivo</div>
+        <div class="next">Successivo</div>
       </header>
+
+      <ul id="days">
+
+      </ul>
+
     </div>
+    <!-- CALENDARIO -->
 
-    <ul id="days">
 
-    </ul>
-
-    <!-- TEMPLATE handlebars -->
+    <!-- TEMPLATE HANDLEBARS -->
     <script id="day-template" type="text/x-handlebars-template">
       <li class="day" data-date="{{dateComplate}}">{{day}} {{month}} <span class="holiday"></span> </li>
-
     </script>
+    <!--// TEMPLATE HANDLEBARS -->
+
     <script src="js/script.js" charset="utf-8"></script>
   </body>
 </html>
