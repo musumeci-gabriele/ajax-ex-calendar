@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Calendario</title>
+    <script src="https://momentjs.com/download/moment.js" charset="utf-8"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.6/handlebars.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Gennaio</h1>
+        <div class="prev">Precedente</div>
+          <div class="next">Successivo</div>
+      </header>
+    </div>
+
+    <ul id="days">
+
+    </ul>
+
+    <!-- TEMPLATE handlebars -->
+    <script id="day-template" type="text/x-handlebars-template">
+      <li class="day" data-date="{{dateComplate}}">{{day}} {{month}} <span class="holiday"></span> </li>
+
+    </script>
+    <script src="js/script.js" charset="utf-8"></script>
+  </body>
+</html>
