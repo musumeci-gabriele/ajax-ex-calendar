@@ -67,7 +67,7 @@ $(document).ready(function(){
   // FUNZIONE CLICK TASTO PRECEDENTE
   $(".back").click(function(){
     if(date.format("M") == 1){
-      alert("non puoi andare indietro");
+      alert("Non puoi andare indietro.");
     }else{
       date.subtract(1, "months");
       printCalendar(date);
@@ -77,8 +77,8 @@ $(document).ready(function(){
 
   // FUNZIONE CLICK TASTO SUCCESSIVO
   $(".next").click(function(){
-    if(date.format("M") == 11){
-      alert("non puoi andare avanti");
+    if(date.format("M") == 12){
+      alert("Non puoi andare avanti.");
     }else{
       date.add(1, "months");
       printCalendar(date);
