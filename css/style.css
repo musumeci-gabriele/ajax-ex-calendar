@@ -5,18 +5,24 @@
 }
 
 body{
-  background-color: lightblue;
+  background-color: rgb(49, 149, 182);
   color: inherit;
   font-weight: bold;
+  font-size: large;
 }
 .wrapper{
   width: 80vw;
   height: 92vh;
   margin: 20px auto;
-  background-color: rgb(255, 229, 160);
+  background-color: rgb(206, 184, 123);
   color:inherit;
   border: 1px solid black;
+  border-radius: 10px;
   box-shadow: 10px 10px 12px grey;
+}
+h1{
+  font-size: 50px;
+  color: aliceblue;
 }
 
 .redHoliday{
@@ -36,6 +42,7 @@ header div{
   box-shadow: 10px 10px 12px grey;
   background-color: white;
   color: inherit;
+  cursor: pointer;
 }
 #days{
   margin: 10px 3px;
